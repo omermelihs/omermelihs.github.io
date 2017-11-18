@@ -192,7 +192,7 @@
                         <label>Adınız-Soyadınız:</label>
                         <input type="text" name="deger" class="form-control" onkeypress="return event.charCode >= 65 && event.charCode <= 351 || event.charCode ==32">
                         <label>E-Posta Adresiniz:</label>
-                        <input type="email" id="txtEmail" name="deger" class="form-control">
+                        <input type="email" name="deger" class="form-control">
                         <label>Mesajınız</label>
                         <textarea class="form-control" name="deger" rows="4"></textarea>
                         <br>
@@ -216,19 +216,27 @@
     <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script>
-    $(function(){
+   $(function(){
         $("#btnTemizle").click(function(){
             $("input:text,textarea,email").val("");
         });
         $(document).ready(function(){
+        
          $("#btnGonder").click(function(){
           var deger= $("input[name=deger]").val();
         
        if(deger==""){alert("Lütfen Alanları Doldurunuz."); 
        }
         
-       else{alert("Mesajınız Gönderildi.");}
-	
+        else{
+           
+             alert("Mesajınız Gönderildi.")
+             
+        }
+         });
+        
+        
+       });
         
     });
     </script>
