@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
+    <title>KAYIT FORMU</title>
+    <style>
+        #arkaplan { 
+            background-image:url(resim4.jpg); background-size:cover;
+        }
+    </style>
+  
+</head>
+<body id="arkaplan">
+    <div class="container">
+         
+      <div class="col-xs12 col-sm-12 col-md-4" style="color:rgb(0,0,0);">
+      
+        <h3>KİŞİSEL BİLGİLERİNİZ</h3>
+        <label>TC Kimlik Numaranız:</label>
+        <input type="text" id="form1" class="form-control" maxlength="11">
+        <label>Adınız-Soyadınız:</label>
+        <input type="text" id="form2" class="form-control" onkeypress="return event.charCode >= 65 && event.charCode <= 351 || event.charCode ==32">
+        <label>Adresiniz:</label>
+        <input type="text" id="form3" class="form-control">
+        <label>Telefon Numaranız:</label>
+        <input type="text" id="form4" class="form-control" maxlength="11">
+  
+        <h3>KAYIT BİLGİLERİNİZ</h3>
+        <label>E-Posta Adresiniz:</label>
+        <input type="email" id="form5" class="form-control">
+        <label>Şifreniz:</label>
+        <input type="password" id="form6" class="form-control">
+        <label>IBAN NO:(Kurs ücretini yatıracağınız IBAN No'su.)</label>
+        <input type="number" id="form7" class="form-control" value="00123456789" readonly>
+        <br>
+        <button type="submit" class="btn btn-primary" id="kayit">Kayıt Ol</button>
+        <hr>
+        <div id="uyari"></div> 
+      </div>
+      <div class="col-xs12 col-sm-12 col-md-4">
+            <h1>Kayıtlar</h1>
+            <table class="table table-hover" style="width: 100%" id="kayittablosu">
+              <tr class="bg-info">
+    
+                <td>TC Kimlik No</td>
+                <td>Ad-Soyad</td>
+                <td>Adres</td>
+                <td>Telefon No</td>
+                <td>E-Posta</td>
+                <td>Şifre</td>
+                <td>Sil</td>
+              </tr>
+              <tr>
+    
+                <td>15382542178</td>
+                <td>Ömer Melih SAĞLAM</td>
+                <td>Kızıltoprak Mah.Ali Çetinkaya Cad.Şanal Apt.No:119 Kat:2/4 Muratpaşa/ANTALYA</td>
+                <td>05542042011</td>
+                <td>ali@mail.com</td>
+                <td>18811998</td>
+                <td>
+                  <button class="btn btn-danger sil">Sil</button>
+                </td>
+              </tr>
+            </table>
+     </div>
+    
+    </div>
+  <script>
+    $(function () {
+      $("#kayit").click(function () {
+        var tc = $("#form1").val();
+        var ad = $("#form2").val();
+        var adres = $("#form3").val();
+        var tel = $("#form4").val();
+        var mail = $("#form5").val();
+        var sifre = $("#form6").val();
+        if (tc == "" || ad=="" || adres=="" || tel=="" || mail == "" || sifre == "") {
+          $("#uyari").fadeIn(1000);
+          $("#uyari").html("Lütfen Tüm Alanları Doldurunuz!");
+          $("#uyari").removeClass();
+          $("#uyari").addClass("alert alert-danger");
+          $("#uyari").fadeOut(3000);
+          return false;
+        }
+        $("#kayittablosu").append("<tr><td>" + tc + "</td><td>" + ad + "</td><td>" + adres + "</td><td>" + tel + "</td><td>"+ mail +"</td><td>"+sifre+"</td><td><button class='btn btn-danger sil'>Sil</button></td></tr>");
+      });
+      $(document).on("click", ".sil", function () {
+        var satir = $(this).closest("tr");
+        satir.remove();
+      });
+    });
+  
+ </script>
+ <script>
+   $(function() {
+            $("#form1, #form4").keypress(function(event) {
+                if (event.which < 48 || event.which > 57) {
+                    return false;
+                }
+            });
+          });  
+        
+          $("#form1, #form4").blur(function () {
+            var d = $(this).val();
+            if (d.length < 11 || d.length > 11) {
+              $(this).val(0);
+              $("#uyari").fadeIn(1000);
+              $("#uyari").html("Girilen Değer 11 Sayıdan Oluşmalıdır!");
+              $("#uyari").removeClass();
+              $("#uyari").addClass("alert alert-info");
+              $("#uyari").fadeOut(6000);
+            }
+          });       
+ </script>
+
+
+    <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+         
+</div>      
+</body>
+</html>
