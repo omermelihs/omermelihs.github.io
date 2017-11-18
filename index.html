@@ -192,7 +192,7 @@
                         <label>Adınız-Soyadınız:</label>
                         <input type="text" name="deger" class="form-control" onkeypress="return event.charCode >= 65 && event.charCode <= 351 || event.charCode ==32">
                         <label>E-Posta Adresiniz:</label>
-                        <input type="email" name="deger" class="form-control">
+                        <input type="text" name="deger" class="form-control">
                         <label>Mesajınız</label>
                         <textarea class="form-control" name="deger" rows="4"></textarea>
                         <br>
@@ -218,7 +218,7 @@
     <script>
    $(function(){
         $("#btnTemizle").click(function(){
-            $("input.form-control,textarea.form-control").val("");
+            $("input:text,textarea").val("");
         });
         $(document).ready(function(){
         
