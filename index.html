@@ -215,41 +215,24 @@
     </div>
     <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
     $(function(){
         $("#btnTemizle").click(function(){
             $("input:text,textarea,email").val("");
         });
         $(document).ready(function(){
-        
+        function submitButtonClick() {
+	var emailAddress = $("#txtEmail").val();
+        $("#btnGonder").click(submitButtonClick)
          $("#btnGonder").click(function(){
           var deger= $("input[name=deger]").val();
         
        if(deger==""){alert("Lütfen Alanları Doldurunuz."); 
        }
         
-        else{
-           
-             alert("Mesajınız Gönderildi.")
-             
-        }
-         });
-        
-        
-       });
-        
-    });
-    </script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-       $(document).ready(function() {
-    $("#btnGonder").click(submitButtonClick)
-});
-       function submitButtonClick() {
-	var emailAddress = $("#txtEmail").val();
-	
-	if (checkEmailAddress(emailAddress))
-		alert("Doğru bir email adresi girdiniz.");
+        else if(checkEmailAddress(emailAddress))
+		alert("Mesajınız Gönderildi.");
 	else
 		alert("Yanlış bir email adresi girdiniz.");
 };
@@ -257,9 +240,17 @@
 function checkEmailAddress(emailAddress) {
 	var reg = new RegExp(/^[^0-9][a-zA-z0-9_]+([.][a-zA-z0-9_]+)*[@][a-zA-z0-9_]+([.][a-zA-z0-9_]+)*[.][a-zA-Z]{2,4}$/i);
 	return reg.test(emailAddress);
-};
+};      
+		
+         });
+        
+        
+       });
+        
+    });
     </script>
-      
+   
+   
   </body>
 
 </html>
