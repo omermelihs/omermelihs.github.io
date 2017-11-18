@@ -192,7 +192,7 @@
                         <label>Adınız-Soyadınız:</label>
                         <input type="text" name="deger" class="form-control" onkeypress="return event.charCode >= 65 && event.charCode <= 351 || event.charCode ==32">
                         <label>E-Posta Adresiniz:</label>
-                        <input type="email" id="email" name="deger" class="form-control">
+                        <input type="email" id="txtEmail" name="deger" class="form-control">
                         <label>Mesajınız</label>
                         <textarea class="form-control" name="deger" rows="4"></textarea>
                         <br>
@@ -215,7 +215,7 @@
     </div>
     <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
     <script>
     $(function(){
         $("#btnTemizle").click(function(){
@@ -241,27 +241,25 @@
         
     });
     </script>
-   
-<script>
-$("#kayit").click(function()
-{
-var email = $("input#email").val();
-if(MailKontrol(email))
-{
-alert("Email Adresi Geçerli");
-}
-else
-{
-alert("Geçersiz veya Hatalı Email");
-return false;
-}
-})
-function MailKontrol(email)
-{
-var kontrol = new RegExp(/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/i);
-return kontrol.test(email);
-}</script>
-       
+   <script>
+       $(document).ready(function() {
+    $("#btnGonder").click(submitButtonClick)
+});
+       function submitButtonClick() {
+	var emailAddress = $("#txtEmail").val();
+	
+	if (checkEmailAddress(emailAddress))
+		alert("Doğru bir email adresi girdiniz.");
+	else
+		alert("Yanlış bir email adresi girdiniz.");
+};
+
+function checkEmailAddress(emailAddress) {
+	var reg = new RegExp(/^[^0-9][a-zA-z0-9_]+([.][a-zA-z0-9_]+)*[@][a-zA-z0-9_]+([.][a-zA-z0-9_]+)*[.][a-zA-Z]{2,4}$/i);
+	return reg.test(emailAddress);
+};
+    </script>
+      
   </body>
 
 </html>
