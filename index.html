@@ -192,7 +192,7 @@
                         <label>Adınız-Soyadınız:</label>
                         <input type="text" name="deger" class="form-control" onkeypress="return event.charCode >= 65 && event.charCode <= 351 || event.charCode ==32">
                         <label>E-Posta Adresiniz:</label>
-                        <input type="text" name="deger" class="form-control">
+                        <input type="email" id="email" name="deger" class="form-control">
                         <label>Mesajınız</label>
                         <textarea class="form-control" name="deger" rows="4"></textarea>
                         <br>
@@ -218,7 +218,7 @@
     <script>
     $(function(){
         $("#btnTemizle").click(function(){
-            $("input:text,textarea").val("");
+            $("input:text,textarea,email").val("");
         });
         $(document).ready(function(){
         
@@ -240,6 +240,26 @@
         
     });
     </script>
+   
+<script>
+$("#kayit").click(function()
+{
+var email = $("input#email").val();
+if(MailKontrol(email))
+{
+alert("Email Adresi Geçerli");
+}
+else
+{
+alert("Geçersiz veya Hatalı Email");
+return false;
+}
+})
+function MailKontrol(email)
+{
+var kontrol = new RegExp(/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/i);
+return kontrol.test(email);
+}</script>
        
   </body>
 
