@@ -40,6 +40,7 @@
         <input type="number" id="form7" class="form-control" value="00123456789" readonly>
         <br>
         <button type="submit" class="btn btn-primary" id="kayit">Kayıt Ol</button>
+        <button type="button" id="btnTemizle" class="btn btn-success">Temizle</button>
         <hr>
         <div id="uyari"></div> 
       </div>
@@ -75,6 +76,10 @@
     
     </div>
   <script>
+    $(function(){
+        $("#btnTemizle").click(function(){
+            $("input:text,textarea").val("");
+        });
     $(function () {
       $("#kayit").click(function () {
         var tc = $("#form1").val();
