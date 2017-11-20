@@ -81,7 +81,8 @@
         var tel = $("#form4").val();
         var mail = $("#form5").val();
         var sifre = $("#form6").val();
-        if (tc == "" || ad=="" || adres=="" || tel=="" || mail == "" || sifre == "") {
+        var iban = $("#form7").val();
+      if (tc == "" || ad=="" || adres=="" || tel=="" || mail == "" || sifre == "") {
           $("#uyari").fadeIn(1000);
           $("#uyari").html("Lütfen Tüm Alanları Doldurunuz!");
           $("#uyari").removeClass();
@@ -89,7 +90,7 @@
           $("#uyari").fadeOut(3000);
           return false;
         }
-        $("#kayittablosu").append("<tr><td>" + tc + "</td><td>" + ad + "</td><td>" + adres + "</td><td>" + tel + "</td><td>"+ mail +"</td><td>"+sifre+"</td><td><button class='btn btn-danger sil'>Sil</button></td></tr>");
+        $("#kayittablosu").append("<tr><td>" + tc + "</td><td>" + ad + "</td><td>" + adres + "</td><td>" + tel + "</td><td>" + mail + "</td><td>" + iban + "</td><td>"+sifre+"</td><td><button class='btn btn-danger sil'>Sil</button></td></tr>");
       });
       $(document).on("click", ".sil", function () {
         var satir = $(this).closest("tr");
