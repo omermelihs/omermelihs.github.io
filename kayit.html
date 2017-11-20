@@ -33,7 +33,7 @@
   
         <h3>KAYIT BİLGİLERİNİZ</h3>
         <label>E-Posta Adresiniz:</label>
-        <input type="email" id="form5" class="form-control">
+        <input type="text" id="form5" class="form-control">
         <label>Şifreniz:</label>
         <input type="password" id="form6" class="form-control" maxlength="8">
         <label>IBAN NO:(Kurs ücretini yatıracağınız IBAN No'su.)</label>
@@ -78,7 +78,7 @@
   <script>
     $(function(){
         $("#btnTemizle").click(function(){
-            $("input:text,textarea").val("");
+            $("input:text,password").val("");
         });
     $(function () {
       $("#kayit").click(function () {
