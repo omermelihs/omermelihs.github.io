@@ -92,7 +92,7 @@
           $("#uyari").fadeOut(3000);
           return false;
         }
-        $("#kayittablosu").append("<tr><td>" + tc + "</td><td>" + ad + "</td><td>" + adres + "</td><td>" + tel + "</td><td>" + mail + "</td><td>" + iban + "</td><td>"+sifre+"</td><td><button class='btn btn-danger sil'>Sil</button></td></tr>");
+        $("#kayittablosu").append("<tr><td>" + tc + "</td><td>" + ad + "</td><td>" + adres + "</td><td>" + tel + "</td><td>" + mail + "</td><td>" + sifre + "</td><td>"+ iban +"</td><td><button class='btn btn-danger sil'>Sil</button></td></tr>");
       });
       $(document).on("click", ".sil", function () {
         var satir = $(this).closest("tr");
