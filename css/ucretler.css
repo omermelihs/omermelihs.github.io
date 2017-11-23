@@ -42,7 +42,7 @@ body {
   margin: 0;
 }
 
-.entry-title .price {
+.entry-title .ucret {
   position: absolute;
   bottom: -25px;
   background: #20BADA;
@@ -121,7 +121,7 @@ body {
   background: #44CBC6;
 }
 
-.basic .price {
+.basic .ucret {
   background: #44CBC6;
 }
 
@@ -133,7 +133,7 @@ body {
   background: #3772aa;
 }
 
-.standard .price {
+.standard .ucret {
   background: #3772aa;
 }
 
@@ -145,6 +145,6 @@ body {
   background: #F75C70;
 }
 
-.ultimite .price {
+.ultimite .ucret {
   background: #DD4B5E;
 }
