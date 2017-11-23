@@ -6,7 +6,7 @@ body {
   margin: 0;
 }
 
-#price {
+#ucret {
   text-align: center;
 }
 
@@ -59,7 +59,7 @@ body {
   font-weight: 700;
 }
 
-.price span {
+.ucret span {
   position: absolute;
   font-size: 9px;
   bottom: -10px;
