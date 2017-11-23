@@ -6,7 +6,7 @@ body {
   margin: 0;
 }
 
-#ucret {
+#price {
   text-align: center;
 }
 
@@ -42,7 +42,7 @@ body {
   margin: 0;
 }
 
-.entry-title .ucret {
+.entry-title .price {
   position: absolute;
   bottom: -25px;
   background: #20BADA;
@@ -59,7 +59,7 @@ body {
   font-weight: 700;
 }
 
-.ucret span {
+.price span {
   position: absolute;
   font-size: 9px;
   bottom: -10px;
@@ -121,7 +121,7 @@ body {
   background: #44CBC6;
 }
 
-.basic .ucret {
+.basic .price {
   background: #44CBC6;
 }
 
@@ -133,7 +133,7 @@ body {
   background: #3772aa;
 }
 
-.standard .ucret {
+.standard .price {
   background: #3772aa;
 }
 
@@ -145,6 +145,6 @@ body {
   background: #F75C70;
 }
 
-.ultimite .ucret {
+.ultimite .price {
   background: #DD4B5E;
 }
