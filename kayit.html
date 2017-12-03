@@ -122,7 +122,8 @@
               $("#uyari").addClass("alert alert-info");
               $("#uyari").fadeOut(6000);
             }
-          });   
+          }); 
+     
          $("#txtSifre").blur(function () {
             var s = $(this).val();
             if (s.length < 8 || s.length > 8) {
@@ -133,7 +134,7 @@
               $("#uyari").fadeOut(6000);
             }
              else{
-                 var s = $(this).val(); 
+                $(this).val(s); 
              }
           });
  </script>
