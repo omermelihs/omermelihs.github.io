@@ -124,8 +124,8 @@
             }
           });   
          $("#txtSifre").blur(function () {
-            var d = $(this).val();
-            if (d.length < 11 || d.length > 11) {
+            var s = $(this).val();
+            if (s.length < 8 || s.length > 8) {
               $(this).val(0);
               $("#uyari").fadeIn(1000);
               $("#uyari").html("Şifre En Az 8 Karakterli ve Sayılardan Oluşmalıdır.!");
