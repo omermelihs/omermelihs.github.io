@@ -126,7 +126,7 @@
          $("#txtSifre").blur(function () {
             var s = $(this).val();
             if (s.length < 8 || s.length > 8) {
-              $(this).val();
+              $(this).val("");
               $("#uyari").fadeIn(1000);
               $("#uyari").html("Şifre En Az 8 Karakterli ve Sayılardan Oluşmalıdır.!");
               $("#uyari").removeClass();
