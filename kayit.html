@@ -23,23 +23,23 @@
       
         <h3>KİŞİSEL BİLGİLERİNİZ</h3>
         <label>TC Kimlik Numaranız:</label>
-        <input type="text" id="form1" class="form-control" maxlength="11">
+        <input type="text" id="txtTc" class="form-control" maxlength="11">
         <label>Adınız-Soyadınız:</label>
-        <input type="text" id="form2" class="form-control" onkeypress="return event.charCode >= 65 && event.charCode <= 351 || event.charCode ==32">
+        <input type="text" id="txtAd" class="form-control" onkeypress="return event.charCode >= 65 && event.charCode <= 351 || event.charCode ==32">
         <label>Adresiniz:</label>
-        <input type="text" id="form3" class="form-control">
+        <input type="text" id="txtAdres" class="form-control">
         <label>Telefon Numaranız:</label>
-        <input type="text" id="form4" class="form-control" maxlength="11">
+        <input type="text" id="txtTel" class="form-control" maxlength="11">
   
         <h3>KAYIT BİLGİLERİNİZ</h3>
         <label>E-Posta Adresiniz:</label>
-        <input type="text" id="form5" class="form-control">
+        <input type="text" id="txtMail" class="form-control">
         <label>Şifreniz:</label>
-        <input type="password" id="form6" class="form-control" maxlength="8">
+        <input type="password" id="txtSifre" class="form-control" maxlength="8">
         <label>IBAN NO:(Kurs ücretini yatıracağınız IBAN No'su.)</label>
-        <input type="number" id="form7" class="form-control" value="00123456789" readonly>
+        <input type="number" id="txtIban" class="form-control" value="00123456789" readonly>
         <br>
-        <button type="submit" class="btn btn-primary" id="kayit">Kayıt Ol</button>
+        <button type="submit" class="btn btn-primary" id="btnKayit">Kayıt Ol</button>
         <br>
         <a href="https://omermelihs.github.io/ucretler.html" class="text-danger">Kurs Ücretleri İçin Tıklayınız.</a>
         <hr>
@@ -47,7 +47,7 @@
       </div>
       <div class="col-xs12 col-sm-12 col-md-4">
             <h1>Kayıtlar</h1>
-            <table class="table table-hover" style="width: 100%" id="kayittablosu">
+            <table class="table table-hover" style="width: 100%" id="tbKayitlar">
               <tr class="bg-info">
     
                 <td>TC Kimlik No</td>
@@ -78,14 +78,14 @@
     </div>
   <script>
      $(function () {
-      $("#kayit").click(function () {
-        var tc = $("#form1").val();
-        var ad = $("#form2").val();
-        var adres = $("#form3").val();
-        var tel = $("#form4").val();
-        var mail = $("#form5").val();
-        var sifre = $("#form6").val();
-        var iban = $("#form7").val();
+      $("#btnKayit").click(function () {
+        var tc = $("#txtTc").val();
+        var ad = $("#txtAd").val();
+        var adres = $("#txtAdres").val();
+        var tel = $("#txtTel").val();
+        var mail = $("#txtMail").val();
+        var sifre = $("#txtSifre").val();
+        var iban = $("#txtIban").val();
       if (tc == "" || ad=="" || adres=="" || tel=="" || mail == "" || sifre == "" || iban == "") {
           $("#uyari").fadeIn(1000);
           $("#uyari").html("Lütfen Tüm Alanları Doldurunuz!");
@@ -94,7 +94,7 @@
           $("#uyari").fadeOut(3000);
           return false;
         }
-        $("#kayittablosu").append("<tr><td>" + tc + "</td><td>" + ad + "</td><td>" + adres + "</td><td>" + tel + "</td><td>" + mail + "</td><td>" + sifre + "</td><td>"+ iban +"</td><td><button class='btn btn-danger sil'>Sil</button></td></tr>");
+        $("#tbKayitlar").append("<tr><td>" + tc + "</td><td>" + ad + "</td><td>" + adres + "</td><td>" + tel + "</td><td>" + mail + "</td><td>" + sifre + "</td><td>"+ iban +"</td><td><button class='btn btn-danger sil'>Sil</button></td></tr>");
       });
       $(document).on("click", ".sil", function () {
         var satir = $(this).closest("tr");
@@ -105,14 +105,14 @@
  </script>
  <script>
    $(function() {
-            $("#form1, #form4").keypress(function(event) {
+            $("#txtTc, #txtTel").keypress(function(event) {
                 if (event.which < 48 || event.which > 57) {
                     return false;
                 }
             });
           });  
         
-          $("#form1, #form4").blur(function () {
+          $("#txtTc, #txtTel").blur(function () {
             var d = $(this).val();
             if (d.length < 11 || d.length > 11) {
               $(this).val(0);
