@@ -1,3 +1,6 @@
 #jumbotron { 
     background-image:url(resim2.gif); width:800;
 }
+ #button:focus{
+            color:rgb(9, 241, 245)
+} 
