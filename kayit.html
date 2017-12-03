@@ -122,7 +122,18 @@
               $("#uyari").addClass("alert alert-info");
               $("#uyari").fadeOut(6000);
             }
-          });       
+          });   
+         $("#txtSifre").blur(function () {
+            var d = $(this).val();
+            if (d.length < 11 || d.length > 11) {
+              $(this).val(0);
+              $("#uyari").fadeIn(1000);
+              $("#uyari").html("Şifre En Az 8 Karakterli ve Sayılardan Oluşmalıdır.!");
+              $("#uyari").removeClass();
+              $("#uyari").addClass("alert alert-info");
+              $("#uyari").fadeOut(6000);
+            }
+          });
  </script>
 
 
