@@ -66,7 +66,7 @@
                 <td>Kızıltoprak Mah. Muratpaşa/ANTALYA</td>
                 <td>05550552233</td>
                 <td>omer@mail.com</td>
-                <td>123456</td>
+                <td>12345678</td>
                 <td>00123456789</td>
                 <td>
                   <button class="btn btn-danger sil">Sil</button>
@@ -126,13 +126,15 @@
          $("#txtSifre").blur(function () {
             var s = $(this).val();
             if (s.length < 8 || s.length > 8) {
-              $(this).val("");
               $("#uyari").fadeIn(1000);
               $("#uyari").html("Şifre En Az 8 Karakterli ve Sayılardan Oluşmalıdır.!");
               $("#uyari").removeClass();
               $("#uyari").addClass("alert alert-info");
               $("#uyari").fadeOut(6000);
             }
+             else{
+                 var s = $(this).val(); 
+             }
           });
  </script>
 
